@@ -1,0 +1,10 @@
+Package: RcmdrPlugin.harbin
+Type: Package
+Title: Rcmdr Harbin Plug-In
+Version: 0.0-1
+Date: 2015-12-23
+Author: Theo Pepler <theo.pepler@glasgow.ac.uk>
+Maintainer: Theo Pepler <theo.pepler@glasgow.ac.uk>
+Description: This package provides an Rcmdr plug-in for the harbin RT-qPCR quantification package.
+License: GPL-2
+LazyData: TRUE
