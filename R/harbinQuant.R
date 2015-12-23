@@ -2,8 +2,8 @@ harbinQuant<-function(){
   require(harbin)
   #harbin.quant()
   env <- environment()
-  initializeDialog(title=gettextRcmdr("Harbin RT-qPCR quantification"), use.tabs=TRUE, tabs=c("tableTab", "statisticsTab"))
-  assign(".tableFrame", tkframe(tableTab), envir=env)
+  initializeDialog(title=gettextRcmdr("Harbin RT-qPCR quantification"), use.tabs=TRUE, tabs=c("inputTab"))
+  assign(".inputFrame", tkframe(inputTab), envir=env)
   #.numeric <- Numeric()
   #xBox <- variableListBox(top, .numeric,
   #                        title=gettextRcmdr("First variable (pick one)"))
@@ -50,7 +50,7 @@ harbinQuant<-function(){
   #               text=gettextRcmdr("Confidence Level"), fg="blue"))
   #tkgrid(confidenceField, sticky="w")
   #tkgrid(alternativeFrame, confidenceFrame, sticky="nw")
-  sliderFrame <- tkframe(tableTab)
+  sliderFrame <- tkframe(inputTab)
   rowsValue<-3
   rowsSlider <- tkscale(sliderFrame, from=1, to=6, showvalue=FALSE, variable=rowsValue, resolution=1, orient="horizontal")#, command=setUpTable)
   rowsShow <- labelRcmdr(sliderFrame, textvariable=rowsValue, width=2, justify="right")
@@ -59,7 +59,7 @@ harbinQuant<-function(){
   dialogSuffix(rows=3, columns=2,
                use.tabs=TRUE,
                grid.buttons=TRUE,
-               tabs=c("tableTab"), tab.names=c("Table")
+               tabs=c("inputTab"), tab.names=c("Input")
                )
   tkgrid(buttonsFrame, columnspan=2, sticky="w")
 }
