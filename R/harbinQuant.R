@@ -1,14 +1,15 @@
 harbinQuant<-function(){
   require(harbin)
   #harbin.quant()
-  initializeDialog(title=gettextRcmdr("Harbin RT-qPCR quantification"))
+  initializeDialog(title=gettextRcmdr("Harbin RT-qPCR quantification"), use.tabs=TRUE, tabs=c("tableTab", "statisticsTab"))
+  assign(".tableFrame", tkframe(tableTab), envir=env)
   #.numeric <- Numeric()
   #xBox <- variableListBox(top, .numeric,
   #                        title=gettextRcmdr("First variable (pick one)"))
   #yBox <- variableListBox(top, .numeric,
   #                        title=gettextRcmdr("Second variable (pick one)"))
   onOK <- function(){
-    print("onOK worked!\n")
+    cat("onOK worked!\n")
   #  x <- getSelection(xBox)
   #  y <- getSelection(yBox)
   #  if (length(x) == 0 | length(y) == 0){
@@ -29,8 +30,7 @@ harbinQuant<-function(){
   #                     .activeDataSet, "$", y,
   #                     ", alternative=’", alternative, "’, conf.level=", level,
   #                     ", paired=TRUE)", sep=""))
-    #tkfocus(CommanderWindow())
-    tkfocus(OutputWindow())
+    tkfocus(CommanderWindow())
   }
   #OKCancelHelp(helpSubject="t.test")
   OKCancelHelp(helpSubject='harbin.quant')
@@ -49,6 +49,14 @@ harbinQuant<-function(){
   #               text=gettextRcmdr("Confidence Level"), fg="blue"))
   #tkgrid(confidenceField, sticky="w")
   #tkgrid(alternativeFrame, confidenceFrame, sticky="nw")
+  sliderFrame <- tkframe(tableTab)
+  rowsSlider <- tkscale(sliderFrame, from=1, to=6, showvalue=FALSE, variable=rowsValue, resolution=1, orient="horizontal")#, command=setUpTable)
+  rowsShow <- labelRcmdr(sliderFrame, textvariable=rowsValue, width=2, justify="right")
+  tkgrid(labelRcmdr(sliderFrame, text=gettextRcmdr("Number of reference genes:")), rowsSlider, rowsShow, sticky="we", padx = 6,  pady = 6)
+  tkgrid(sliderFrame, sticky="w")
   tkgrid(buttonsFrame, columnspan=2, sticky="w")
-  dialogSuffix(rows=3, columns=2)
+  dialogSuffix(rows=3, columns=2,
+               use.tabs=TRUE,
+               #grid.buttons=TRUE,
+               tabs=c("tableTab"), tab.names=c("Table"))
 }
