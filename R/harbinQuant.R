@@ -23,7 +23,7 @@ harbinQuant<-function(){
   #  }
   #  alternative <- as.character(tclvalue(alternativeVariable))
   #  level <- tclvalue(confidenceLevel)
-  #  closeDialog()
+    closeDialog()
   #  .activeDataSet <- ActiveDataSet()
   #  doItAndPrint(paste("t.test(", .activeDataSet, "$", x, ", ",
   #                     .activeDataSet, "$", y,
