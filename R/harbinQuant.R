@@ -1,6 +1,7 @@
 harbinQuant<-function(){
   require(harbin)
   #harbin.quant()
+  env <- environment()
   initializeDialog(title=gettextRcmdr("Harbin RT-qPCR quantification"), use.tabs=TRUE, tabs=c("tableTab", "statisticsTab"))
   assign(".tableFrame", tkframe(tableTab), envir=env)
   #.numeric <- Numeric()
@@ -50,6 +51,7 @@ harbinQuant<-function(){
   #tkgrid(confidenceField, sticky="w")
   #tkgrid(alternativeFrame, confidenceFrame, sticky="nw")
   sliderFrame <- tkframe(tableTab)
+  rowsValue<-3
   rowsSlider <- tkscale(sliderFrame, from=1, to=6, showvalue=FALSE, variable=rowsValue, resolution=1, orient="horizontal")#, command=setUpTable)
   rowsShow <- labelRcmdr(sliderFrame, textvariable=rowsValue, width=2, justify="right")
   tkgrid(labelRcmdr(sliderFrame, text=gettextRcmdr("Number of reference genes:")), rowsSlider, rowsShow, sticky="we", padx = 6,  pady = 6)
@@ -57,6 +59,7 @@ harbinQuant<-function(){
   tkgrid(buttonsFrame, columnspan=2, sticky="w")
   dialogSuffix(rows=3, columns=2,
                use.tabs=TRUE,
-               #grid.buttons=TRUE,
-               tabs=c("tableTab"), tab.names=c("Table"))
+               grid.buttons=TRUE,
+               tabs=c("tableTab"), tab.names=c("Table")
+               )
 }
