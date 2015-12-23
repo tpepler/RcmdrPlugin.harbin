@@ -5,6 +5,6 @@
 
 #   type    menu/item      operation/parent  label                              command/menu                activation    install?
 
-#menu    harbinMenu      topMenu         "Harbin"                                      ""                          ""                      ""
-item    dataMenu      command         "Harbin quantification"                 harbinQuant                ""                      "packageAvailable('harbin')"
-item    dataMenu      command         "Hello world!"                          hello                ""                      ""
+menu    harbinMenu      topMenu         ""                                      ""                          ""                      ""
+item    harbinMenu      command         "Harbin quantification"                 harbinQuant                ""                      "packageAvailable('harbin')"
+#item    dataMenu      command         "Hello world!"                          hello                ""                      ""
