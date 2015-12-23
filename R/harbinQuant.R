@@ -29,7 +29,8 @@ harbinQuant<-function(){
   #                     .activeDataSet, "$", y,
   #                     ", alternative=’", alternative, "’, conf.level=", level,
   #                     ", paired=TRUE)", sep=""))
-    tkfocus(CommanderWindow())
+    #tkfocus(CommanderWindow())
+    tkfocus(OutputWindow())
   }
   #OKCancelHelp(helpSubject="t.test")
   OKCancelHelp(helpSubject='harbin.quant')
