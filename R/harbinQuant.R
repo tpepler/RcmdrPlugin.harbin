@@ -58,8 +58,15 @@ harbinQuant<-function(){
   tkgrid(sliderFrame, sticky="w")
 
   f.frame <- tkframe (inputTab)
-  tkpack (tkbutton (f.frame), side="left")
-  tkgrid (labelRcmdr(f.frame, text=gettextRcmdr("Gene-of-interest files")), f.frame, padx=6, pady=6)
+  #tkpack (tkbutton (f.frame), side="left")
+
+  goi.button <- tkbutton(f.frame, text = "Select GOI file(s)")#, command = getfile)
+  tkgrid(goi.button, pady=10, padx=10, columnspan=3)
+
+  #tkpack (tkbutton (f.frame))
+  #tkpack (tkbutton (f.frame))
+  #tkgrid (labelRcmdr(f.frame, text=gettextRcmdr("Gene-of-interest files")), f.frame, padx=6, pady=6)
+  #tkgrid (f.frame, padx=6, pady=6)
 
   dialogSuffix(rows=3, columns=2,
                use.tabs=TRUE,
