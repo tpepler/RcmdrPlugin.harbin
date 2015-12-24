@@ -57,9 +57,10 @@ harbinQuant<-function(){
   tkgrid(labelRcmdr(sliderFrame, text=gettextRcmdr("Number of reference genes:")), rowsSlider, rowsShow, sticky="we", padx = 6,  pady = 6)
   tkgrid(sliderFrame, sticky="w")
 
-  f.frame <- tkframe (inputTab)
-  for(i in 1:10){tkpack (tkbutton (f.frame))}
-  tkgrid (f.frame, pady=15)
+  #f.frame <- tkframe (inputTab)
+  tkpack (tkbutton (sliderFrame))
+  tkpack (tkbutton (sliderFrame))
+  tkgrid (sliderFrame, pady=15)
 
   dialogSuffix(rows=3, columns=2,
                use.tabs=TRUE,
