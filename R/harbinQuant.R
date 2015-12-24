@@ -59,8 +59,7 @@ harbinQuant<-function(){
 
   f.frame <- tkframe (inputTab)
   tkpack (tkbutton (f.frame), side="left")
-  tkpack (tkbutton (f.frame), side="left")
-  tkgrid (f.frame, padx=6, pady=6)
+  tkgrid (labelRcmdr(f.frame, text=gettextRcmdr("Gene-of-interest files")), f.frame, padx=6, pady=6)
 
   dialogSuffix(rows=3, columns=2,
                use.tabs=TRUE,
